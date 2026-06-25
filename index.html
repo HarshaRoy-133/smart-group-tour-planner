@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Group Tour Planning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#planner" aria-label="Smart Group Tour Planner home">
+      <span class="brand-mark">SG</span>
+      <span>Smart Group Tour Planner</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#planner">Planner</a>
+      <a href="#places">India Places</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="assets/group-trip-hero.png" alt="Friends planning a group trip together around a travel map" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">India Group Trip Planner</p>
+        <h1>Plan a beautiful India trip everyone will love</h1>
+        <p>
+          Choose friends, family, or solo travel. Add your budget, number of days,
+          and interests, then get a balanced itinerary across famous and hidden places in India.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#planner">Create My Itinerary</a>
+          <a class="button secondary" href="#places">Explore Places</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-band" aria-label="Project highlights">
+      <div>
+        <strong>Famous + hidden India</strong>
+        <span>From Varanasi and Jaipur to Ziro Valley, Gokarna, Gandikota, and Majuli.</span>
+      </div>
+      <div>
+        <strong>Day-wise itinerary</strong>
+        <span>Plans by travel days, budget, comfort, and group interests.</span>
+      </div>
+      <div>
+        <strong>Balanced for everyone</strong>
+        <span>Adventure, food, shopping, temples, nature, culture, beaches, and heritage.</span>
+      </div>
+    </section>
+
+    <section id="planner" class="planner-section">
+      <div class="section-heading">
+        <p class="eyebrow">Smart Planner</p>
+        <h2>Tell us your group style and get a day-wise India itinerary</h2>
+      </div>
+
+      <div class="planner-layout">
+        <form class="control-panel" id="plannerForm">
+          <label>
+            Trip Type
+            <select id="tripType">
+              <option value="friends">Friends</option>
+              <option value="family">Family</option>
+              <option value="solo">Solo</option>
+            </select>
+          </label>
+
+          <div class="two-fields">
+            <label>
+              Start Location
+              <select id="startCity"></select>
+            </label>
+
+            <label>
+              End Location
+              <select id="endCity"></select>
+            </label>
+          </div>
+
+          <label>
+            Type different starting point
+            <input id="customStart" type="text" placeholder="Example: Mysuru, Pune, Mangalore, your home town" />
+          </label>
+
+          <label>
+            Type different ending point
+            <input id="customEnd" type="text" placeholder="Example: Delhi airport, Goa, your return city" />
+          </label>
+
+          <label>
+            Total Budget
+            <input id="budget" type="range" min="10000" max="150000" step="5000" value="65000" />
+            <span class="range-value" id="budgetValue">Rs. 65000</span>
+          </label>
+
+          <label>
+            How many days will you travel?
+            <input id="days" type="range" min="2" max="14" step="1" value="6" />
+            <span class="range-value" id="daysValue">6 days</span>
+          </label>
+
+          <fieldset>
+            <legend>Each Traveler's Choice</legend>
+            <div class="friend-grid" id="friends"></div>
+          </fieldset>
+
+          <button class="button primary wide" type="submit">Generate Optimized Itinerary</button>
+        </form>
+
+        <div class="results-panel" aria-live="polite">
+          <div class="metrics" id="metrics"></div>
+          <div class="journey-map" id="journeyMap"></div>
+          <div class="route-map">
+            <div class="route-title">
+              <h3>Recommended Day Plan</h3>
+              <span id="algorithmBadge">Balanced Trip Score</span>
+            </div>
+            <ol class="route-list" id="routeList"></ol>
+          </div>
+          <div class="explain-box" id="explainBox"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="places" class="destinations-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">India Location Collection</p>
+        <h2>Best-known and beautiful hidden places used by the planner</h2>
+      </div>
+      <div class="destination-grid" id="destinationGrid"></div>
+    </section>
+
+    <section id="experience" class="experience-section">
+      <div class="section-heading">
+        <p class="eyebrow">Travel Experience</p>
+        <h2>Designed for real groups, not only shortest routes</h2>
+        <p>Each plan balances places people dream of visiting with quieter gems that make the trip memorable. The code still uses strong DSA logic in the background, but the website keeps the experience clean and travel-focused.</p>
+      </div>
+      <div class="experience-grid">
+        <article><strong>For friends</strong><span>Night markets, treks, beaches, food streets, and photo-worthy spots.</span></article>
+        <article><strong>For family</strong><span>Comfortable routes, temples, culture, scenic places, and calmer travel days.</span></article>
+        <article><strong>For solo</strong><span>Safe, flexible locations with nature, hostels, cafes, and discovery time.</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Smart Group Tour Planning System</strong>
+    <span>India day-wise itinerary planning for friends, family, and solo travelers.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
